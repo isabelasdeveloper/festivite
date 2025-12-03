@@ -1,1 +1,42 @@
 @use "./variaveis" as var;
+
+//FONTE BASE
+@include ff-fs-lh-w($ff, $fs, $lh, $w) {
+  font-family: $ff;
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $w;
+}
+
+//LECKERLI ONE
+@include logo() {
+  @include ff-fs-lh-w("Leckerli One", 2.5rem, auto, 400) {
+  }
+}
+
+//BALOON 2
+@include heading-md() {
+  @include ff-fs-lh-w("Baloo 2", 1.75rem, auto, 700) {
+  }
+}
+
+@include heading-sm() {
+  @include ff-fs-lh-w("Baloo 2", 1.125rem, auto, 700) {
+  }
+}
+
+//OPEN SANS
+@include body-md() {
+  @include ff-fs-lh-w("Open Sans", 1rem, auto, 400) {
+  }
+}
+
+@include body-sm() {
+  @include ff-fs-lh-w("Open Sans", 0.875rem, auto, 400) {
+  }
+}
+
+@include body-sx() {
+  @include ff-fs-lh-w("Open Sans", 0.75rem, auto, 400) {
+  }
+}
