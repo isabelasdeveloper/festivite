@@ -1,0 +1,108 @@
+@use "/src/styles/abstract/variaveis" as var;
+@use "/src/styles/abstract/mixins" as mix;
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  &-label {
+    @include mix.body-sm();
+    color: var.$text-body;
+  }
+  &-text {
+    padding: 13px 16px;
+    border: 1px solid var.$input-stroke;
+    background-color: var.$input-base;
+    border-radius: 8px;
+    display: flex;
+    @include mix.body-md();
+    color: var.$text-heading;
+
+    &::placeholder {
+      @include mix.body-md();
+      color: var.$input-placeholder;
+    }
+
+    &:not(:placeholder-shown) {
+      border-color: var.$brand-light;
+    }
+
+    &:user-invalid {
+      border-color: var.$danger;
+    }
+  }
+}
+
+.form-input-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+
+  &-box {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background-color: var.$input-base;
+    border: 1px solid var.$input-stroke;
+    border-radius: 8px;
+    padding: 4px;
+  }
+
+  input {
+    display: none;
+  }
+
+  &-option {
+    z-index: 2;
+    padding: 10px 0;
+    cursor: pointer;
+    @include mix.body-sm();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    color: var.$text-body;
+    transition: color 0.2s ease;
+
+    i {
+      font-size: 1rem;
+      color: var.$text-body;
+      transition: color 0.2s ease;
+    }
+  }
+
+  &-slider {
+    position: absolute;
+    inset: 4px;
+    width: calc(50% - 4px);
+    background-color: var.$shape-button;
+    border-radius: 6px;
+    transition: transform 0.25s ease;
+    z-index: 1;
+  }
+}
+
+/* slider */
+#online:checked ~ .form-input-toggle-slider {
+  transform: translateX(100%);
+}
+
+#presencial:checked ~ .form-input-toggle-slider {
+  transform: translateX(0%);
+}
+
+/* ESTADO ATIVO – TEXTO (BRANCO) + ÍCONE (AZUL) */
+#presencial:checked ~ .form-input-toggle-option[for="presencial"],
+#online:checked ~ .form-input-toggle-option[for="online"] {
+  color: var.$text-heading;
+  font-weight: 600;
+}
+
+#presencial:checked ~ .form-input-toggle-option[for="presencial"] i,
+#online:checked ~ .form-input-toggle-option[for="online"] i {
+  color: var.$brand-mid;
+}

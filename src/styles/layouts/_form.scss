@@ -1,0 +1,50 @@
+@use "/src/styles/abstract/variaveis" as var;
+@use "/src/styles/abstract/mixins" as mix;
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0;
+  border-radius: 12px;
+  background-color: var.$shape-body;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 560px;
+  gap: 40px;
+  &-title {
+    @include mix.heading-md();
+    color: var.$text-heading;
+  }
+  //SESSAO SOBRE O EVENTO
+  &-about {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+    align-items: start;
+    justify-content: left;
+    gap: 16px;
+    &-title {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      &-img {
+        width: 24px;
+        height: 24px;
+      }
+      &-text {
+        @include mix.heading-sm();
+        color: var.$text-heading;
+      }
+    }
+    &-date {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      gap: 16px;
+    }
+  }
+}

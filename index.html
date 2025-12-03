@@ -4,11 +4,109 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/path/to/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/8afb87ac31.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="/src/scripts/main.js"></script>
     <title>Festivite</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <h3>teste</h3>
+    <main class="container">
+      <aside class="container-aside">
+        <img class="container-aside-logo" src="/public/images/logo.svg" />
+        <h1 class="container-aside-title">Festivite</h1>
+        <p class="container-aside-text">
+          Crie um convite digital para o seu evento
+        </p>
+      </aside>
+
+      <section class="container-form">
+        <form class="form">
+          <h2 class="form-title">Crie seu convite</h2>
+
+          <fieldset class="form-about">
+            <legend class="form-about-title">
+              <img
+                class="form-about-title-img"
+                src="/public/images/calendar.svg"
+                alt="Logo de calendario"
+              />
+              <h3 class="form-about-title-text">Sobre o evento</h3>
+            </legend>
+
+            <div class="form-input">
+              <label class="form-input-label" for="titulo-evento">Título</label>
+              <input
+                class="form-input-text"
+                type="text"
+                id="titulo-evento"
+                placeholder="Nome do evento"
+                required
+              />
+            </div>
+
+            <div class="form-about-date">
+              <div class="form-input">
+                <label class="form-input-label" for="inicio-evento"
+                  >Início</label
+                >
+                <input
+                  class="form-input-text"
+                  type="text"
+                  id="inicio-evento"
+                  placeholder="DD/MM/AAAA, --:--"
+                  pattern="\d{2}/\d{2}/\d{4},\s(?:[01]\d|2[0-3]):[0-5]\d"
+                />
+              </div>
+
+              <div class="form-input">
+                <label class="form-input-label" for="fim-evento">Fim</label>
+                <input
+                  class="form-input-text"
+                  type="text"
+                  id="fim-evento"
+                  placeholder="DD/MM/AAAA, --:--"
+                  pattern="\d{2}/\d{2}/\d{4},\s(?:[01]\d|2[0-3]):[0-5]\d"
+                />
+              </div>
+
+              <div class="form-input form-input-toggle">
+                <label class="form-input-label">Tipo do evento</label>
+
+                <div class="form-input-toggle-box">
+                  <input type="radio" name="tipo" id="presencial" checked />
+                  <input type="radio" name="tipo" id="online" />
+
+                  <label class="form-input-toggle-option" for="presencial">
+                    <i class="fa-solid fa-building"></i>
+                    Presencial
+                  </label>
+
+                  <label class="form-input-toggle-option" for="online">
+                    <i class="fa-solid fa-video"></i>
+                    Online
+                  </label>
+
+                  <span class="form-input-toggle-slider"></span>
+                </div>
+              </div>
+
+              <div class="form-input">
+                <label class="form-input-label" for="titulo-evento"
+                  >Local</label
+                >
+                <input
+                  class="form-input-text"
+                  type="url"
+                  id="link"
+                  placeholder="Link ou endereço"
+                />
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
   </body>
 </html>

@@ -91,3 +91,15 @@ section,
 main {
   display: block;
 }
+
+/* Fieldset & Legend — tirando o contorno feio do navegador */
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-inline-size: 0;
+}
+
+legend {
+  padding: 0;
+}

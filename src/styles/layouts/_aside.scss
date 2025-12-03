@@ -1,0 +1,29 @@
+@use "/src/styles/abstract/variaveis" as var;
+@use "/src/styles/abstract/mixins" as mix;
+
+.container-aside {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  height: 728px;
+  width: 400px;
+  border-radius: 12px;
+  background-image: url(/public/images/cake.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &-logo {
+    width: 45.851px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+  &-title {
+    @include mix.logo();
+    color: var.$pink;
+  }
+  &-text {
+    @include mix.body-md();
+    color: var.$text-heading;
+    font-weight: 300;
+  }
+}
