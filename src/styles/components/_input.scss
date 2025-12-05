@@ -1,6 +1,7 @@
 @use "/src/styles/abstract/variaveis" as var;
 @use "/src/styles/abstract/mixins" as mix;
 
+//INPUT DO FORMULARIO
 .form-input {
   display: flex;
   flex-direction: column;
@@ -18,22 +19,41 @@
     display: flex;
     @include mix.body-md();
     color: var.$text-heading;
-
     &::placeholder {
       @include mix.body-md();
       color: var.$input-placeholder;
     }
-
     &:not(:placeholder-shown) {
       border-color: var.$brand-light;
     }
-
+    &:user-invalid {
+      border-color: var.$danger;
+    }
+  }
+  &-textarea {
+    padding: 13px 16px;
+    border: 1px solid var.$input-stroke;
+    background-color: var.$input-base;
+    @include mix.body-md();
+    color: var.$text-heading;
+    border-radius: 8px;
+    grid-column: 2fr;
+    width: 100%;
+    height: 136px;
+    &::placeholder {
+      @include mix.body-md();
+      color: var.$input-placeholder;
+    }
+    &:not(:placeholder-shown) {
+      border-color: var.$brand-light;
+    }
     &:user-invalid {
       border-color: var.$danger;
     }
   }
 }
 
+//REUNIAO PRESENCIAL OU ONLINE
 .form-input-toggle {
   display: flex;
   flex-direction: column;
@@ -86,23 +106,240 @@
   }
 }
 
+.input-termo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  &-text {
+    @include mix.body-sm();
+    color: var.$text-body;
+    font-weight: 400;
+    & a {
+      color: var.$brand-mid;
+      text-decoration: underline;
+      &:hover {
+        color: var.$brand-light;
+      }
+    }
+  }
+  &-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var.$brand-mid;
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+    display: grid;
+    place-items: center;
+    transition: 0.2s ease;
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 6px;
+      border-bottom: 2px solid var.$brand-mid;
+      border-left: 2px solid var.$brand-mid;
+      transform: scale(0) rotate(-45deg);
+      transition: 0.15s ease;
+    }
+
+    &:checked::after {
+      transform: scale(1) rotate(-45deg);
+    }
+
+    &:checked {
+      background: rgba(89, 178, 255, 0.15);
+      border-color: #59b2ff;
+    }
+  }
+}
+
+.btn-send {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  gap: 12px;
+  background-color: var.$brand-mid;
+  border-radius: 8px;
+  &:hover {
+    background-color: var.$brand-dark;
+  }
+  &-img {
+    width: 20px;
+    height: 20px;
+  }
+  &-p {
+    @include mix.body-md();
+    color: var.$text-heading;
+    font-weight: 600;
+  }
+}
+
 /* slider */
 #online:checked ~ .form-input-toggle-slider {
   transform: translateX(100%);
 }
-
 #presencial:checked ~ .form-input-toggle-slider {
   transform: translateX(0%);
 }
-
 /* ESTADO ATIVO – TEXTO (BRANCO) + ÍCONE (AZUL) */
 #presencial:checked ~ .form-input-toggle-option[for="presencial"],
 #online:checked ~ .form-input-toggle-option[for="online"] {
   color: var.$text-heading;
   font-weight: 600;
 }
-
 #presencial:checked ~ .form-input-toggle-option[for="presencial"] i,
 #online:checked ~ .form-input-toggle-option[for="online"] i {
   color: var.$brand-mid;
+}
+
+//PALETA DE CORES BOTOES
+.color-btn {
+  border: 5px solid var.$shape-button;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  &:focus {
+    outline: 2px solid var.$brand-mid;
+  }
+}
+
+//TOGGLE SWITCH DE ESTILO ESCURO
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 32px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var.$input-base;
+  border-radius: 30px;
+  transition: 0.3s;
+  border: 2px solid var.$input-stroke;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 2px;
+  top: 2px;
+  background-color: var.$input-stroke;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background-color: var.$brand-mid;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(30px);
+}
+
+.switch-text {
+  @include mix.body-sm();
+  color: var.$text-body;
+}
+
+//UPLOAD DE ARQUIVOS
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  &-button {
+    background-color: var.$shape-button;
+    padding: 12px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+      background-color: #3a3d40;
+    }
+  }
+}
+
+.file-label {
+  @include mix.body-sm();
+  color: var.$text-heading;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.file-icon {
+  color: var.$brand-light;
+  cursor: pointer;
+}
+
+.file-name {
+  @include mix.body-md();
+  color: var.$input-placeholder;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+//CORES DOS BOTOES
+#azul {
+  background-color: var.$brand-light;
+}
+
+#roxo {
+  background-color: var.$navy;
+}
+
+#roxo-claro {
+  background-color: var.$purple;
+}
+
+#rosa {
+  background-color: var.$fuschia;
+}
+
+#pink {
+  background-color: var.$pink;
+}
+
+#vermelho {
+  background-color: var.$danger;
+}
+
+#laranja {
+  background-color: var.$orange;
+}
+
+#laranja-claro {
+  background-color: var.$yellow;
+}
+
+#amarelo {
+  background-color: var.$lime;
+}
+
+#verde {
+  background-color: var.$green;
+}
+
+#aqua {
+  background-color: var.$cyan;
 }

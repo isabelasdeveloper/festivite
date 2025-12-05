@@ -8,6 +8,7 @@
   padding: 80px 0;
   border-radius: 12px;
   background-color: var.$shape-body;
+  overflow-y: auto;
 }
 
 .form {
@@ -47,4 +48,102 @@
       gap: 16px;
     }
   }
+  &-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    &-colors {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      &-list {
+        display: flex;
+        gap: 10px;
+      }
+    }
+    &-theme {
+      display: flex;
+      flex-direction: column;
+      &-styles {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+        gap: 16px;
+        &-toggle {
+          display: flex;
+          flex-direction: column;
+          align-items: left;
+          display: flex;
+          width: 176px;
+          gap: 16px;
+          &-switch {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          }
+        }
+        &-file {
+          display: flex;
+          flex-direction: column;
+          align-items: left;
+          width: 368px;
+          gap: 16px;
+        }
+      }
+    }
+  }
+  &-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    &-email {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      gap: 16px;
+    }
+  }
+}
+
+.form-terms {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 8px;
+  margin-bottom: 48px;
+  &-span {
+    width: 100%;
+    border: 1px solid var.$input-stroke;
+    margin: 40px 0;
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.form-button {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  padding: 12px;
+}
+
+//WEBKIT DO SCROLL DA PAGINA
+.container-form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container-form::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container-form::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+.container-form::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
 }

@@ -20,7 +20,6 @@
           Crie um convite digital para o seu evento
         </p>
       </aside>
-
       <section class="container-form">
         <form class="form">
           <h2 class="form-title">Crie seu convite</h2>
@@ -99,11 +98,317 @@
                 <input
                   class="form-input-text"
                   type="url"
-                  id="link"
+                  id="link-reuniao"
                   placeholder="Link ou endereço"
                 />
               </div>
+
+              <div class="form-input">
+                <label class="form-input-label" for="titulo-evento"
+                  >Descrição</label
+                >
+              </div>
             </div>
+
+            <textarea
+              class="form-input-textarea"
+              maxlength="250"
+              id="descricao-reuniao"
+              placeholder="Escreva sobre os detalhes do evento"
+            ></textarea>
+          </fieldset>
+
+          <fieldset class="form-custom">
+            <legend class="form-about-title">
+              <img
+                class="form-about-title-img"
+                src="/public/images/paintbrush-vertical.svg"
+                alt="Logo de calendario"
+              />
+              <h3 class="form-about-title-text">Personalização</h3>
+            </legend>
+
+            <div class="form-custom-colors">
+              <p class="form-input-label">Cor principal</p>
+              <ul class="form-custom-colors-list">
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="azul"></button>
+                </li>
+
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="roxo"></button>
+                </li>
+
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="roxo-claro"></button>
+                </li>
+
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="rosa"></button>
+                </li>
+
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="pink"></button>
+                </li>
+
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="vermelho"></button>
+                </li>
+
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="laranja"></button>
+                </li>
+
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="laranja-claro"></button>
+                </li>
+
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="amarelo"></button>
+                </li>
+
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="verde"></button>
+                </li>
+
+                <li class="form-custom-colors-list-item">
+                  <button class="color-btn" id="aqua"></button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="form-custom-theme">
+              <p class="form-input-label">Tema do evento</p>
+              <div class="cards">
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/birth.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Aniversário</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/infantil.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Infantil</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/formatura.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Formatura</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/casamento.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Casamento</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/cha-bebe.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Chá de bebê</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/cha-panela.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Chá de panela</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/carnaval.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Carnaval</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/pascoa.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Páscoa</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/sao-joao.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">São João</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/halloween.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Halloween</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/natal.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Natal</p>
+                </button>
+
+                <button class="card-theme">
+                  <img
+                    class="card-theme-img"
+                    src="/public/images/outro.png"
+                    alt="#"
+                  />
+                  <p class="card-theme-title">Outro</p>
+                </button>
+              </div>
+
+              <div class="form-custom-theme-styles">
+                <!-- TOGGLE SWITCH -->
+                <div class="form-custom-theme-styles-toggle">
+                  <p class="form-input-label">Estilo</p>
+                  <div class="form-custom-theme-styles-toggle-switch">
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider"></span>
+                    </label>
+                    <span class="switch-text">Escuro</span>
+                  </div>
+                </div>
+                <!-- TOGGLE SWITCH -->
+
+                <!-- INPUT FILE -->
+                <div class="form-custom-theme-styles-file">
+                  <p class="form-input-label">Foto de capa</p>
+                  <div class="file-upload">
+                    <div class="file-upload-button">
+                      <i class="fa-solid fa-upload file-icon"></i>
+                      <label for="file" class="file-label"> Selecionar </label>
+                    </div>
+                    <span class="file-name">Nenhum arquivo selecionado</span>
+                    <input type="file" id="file" />
+                  </div>
+                </div>
+                <!-- INPUT FILE -->
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-contact">
+            <legend class="form-about-title">
+              <img
+                class="form-about-title-img"
+                src="/public/images/contact.svg"
+                alt="Logo de calendario"
+              />
+              <h3 class="form-about-title-text">Dados para contato</h3>
+            </legend>
+
+            <div class="form-input">
+              <label class="form-input-label" for="titulo-evento">Nome</label>
+              <input
+                class="form-input-text"
+                type="text"
+                id="nome-pessoa"
+                placeholder="Nome completo"
+                required
+              />
+            </div>
+
+            <div class="form-contact-email">
+              <div class="form-input">
+                <label class="form-input-label" for="email-contact"
+                  >E-mail</label
+                >
+                <input
+                  class="form-input-text"
+                  type="email"
+                  id="email-contact"
+                  placeholder="exemplo@email.com"
+                  required
+                />
+              </div>
+
+              <div class="form-input">
+                <label class="form-input-label" for="tel">Telefone</label>
+                <input
+                  class="form-input-text"
+                  type="tel"
+                  id="tel"
+                  pattern="^\(\d{2}\)\s\d{5}-\d{4}$"
+                  placeholder="(99) 99999-9999"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-terms">
+            <span class="form-terms-span"></span>
+            <div class="form-terms-items">
+              <div class="input-termo">
+                <input class="input-termo-checkbox" type="checkbox" />
+                <p class="input-termo-text">
+                  Li e concordo com os <a href="">Termos e Condições</a> e com a
+                  <a href="">Política de Privacidade</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="form-terms-items">
+              <div class="input-termo">
+                <input class="input-termo-checkbox" type="checkbox" />
+                <p class="input-termo-text">
+                  Aceito receber atualizações e promoções por e-mail
+                </p>
+              </div>
+            </div>
+
+            <div class="form-terms-items">
+              <div class="input-termo">
+                <input class="input-termo-checkbox" type="checkbox" />
+                <p class="input-termo-text">
+                  Aceito receber atualizações e promoções por SMS
+                </p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-button">
+            <button class="btn-send" type="submit">
+              <img
+                class="btn-send-img"
+                src="/public/images/ticket.svg"
+                alt="#"
+              />
+              <p class="btn-send-p">Gerar convite</p>
+            </button>
           </fieldset>
         </form>
       </section>

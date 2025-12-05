@@ -103,3 +103,11 @@ fieldset {
 legend {
   padding: 0;
 }
+
+textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  box-shadow: none;
+  background: none; /* opcional, caso queira tudo transparente */
+}
