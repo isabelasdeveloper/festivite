@@ -47,7 +47,6 @@ Se quiser se conectar comigo, acompanhar meus projetos ou trocar ideias sobre de
 ### 🚀 Rocketseat
 Caso queira realizar o desafio, você pode acessar o projeto diretamente na plataforma da Rocketseat.
 <br/>
-https://app.rocketseat.com.br/projects/desafio-pratico-portfolio-dev?module_slug=desafio-pratico-portfoliodev&origin=%2Fprojects
 <br/>
 [![Rocketseat Project](https://img.shields.io/badge/Desafio%20Rocketseat-6C5CE7?style=for-the-badge&logo=rocket&logoColor=white)](https://app.rocketseat.com.br/projects/desafio-pratico-formulario-de-convite?module_slug=desafio-pratico-formulario-de-convite&origin=%2Fjourney%2Ffull-stack%2Fcontents)
 
